@@ -1,7 +1,6 @@
 import os
 
 from tinamit.conect import Conectado
-
 from tinamit.geog.mapa import dibujar_mapa, FormaDinámicaNumérica, Agua, Calle, FormaEstática, Bosque, Ciudad
 from tinamit.envolt.mds import gen_mds
 from tinamit.envolt.bf.sahysmod import ModeloSAHYSMOD
@@ -68,7 +67,7 @@ if __name__ == '__main__':
 
     # 3. Now create the model
     # Create a coupled model instance
-    mds = gen_mds(os.path.join(os.path.split(__file__)[0], 'Vensim', 'Tinamit_Rechna.vpm'))
+    mds = gen_mds(os.path.join(os.path.split(__file__)[0], 'ونشم', 'Tinamit_Rechna.vpm'))
     bf = ModeloSAHYSMOD('495anew1.inp')
     modelo = Conectado(bf, mds)
     nueva_unidad('season', 'month', 6)
