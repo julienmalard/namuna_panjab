@@ -24,8 +24,8 @@ if __name__ == '__main__':
     srk = Calle(os.path.join(base_dir_shp, 'road.shp'))
 
     # 1. Simple runs
-    runs_simple = {'CWU': {'Capacity per tubewell': 100.8, 'Fw': 0.8, 'Policy Canal lining': 0,
-                           'Policy RH': 0, 'Policy Irrigation improvement': 0}
+    runs_simple = {'CWU': {'ایک کنواں کا حجم': 100.8, 'ایف ڈبلو': 0.8, 'حکمت عملی نہر پختگی': 0,
+                                          'حکمت عملی تالاب': 0, 'حکمت عملی براے آبپاشی کارکردگی': 0}
                    # 'VD': {'Capacity per tubewell': 153.0, 'Fw': 0.8, 'Policy Canal lining': 0,
                    #        'Policy RH': 0, 'Policy Irrigation improvement': 0},
                    # 'CL': {'Capacity per tubewell': 100.8, 'Fw': 0.8, 'Policy Canal lining': 1,
@@ -39,57 +39,57 @@ if __name__ == '__main__':
     # 2. Complex runs
     # Switch values for runs
     ops = {
-        'Capacity per tubewell': [153.0, 100.8],
-        'Fw': [0.8, 0],
-        'Policy Canal lining': [0, 1],
-        'Policy RH': [0, 1],
-        'Policy Irrigation improvement': [0, 1]
+        'ایک کنواں کا حجم': [153.0, 100.8],
+        'ایف ڈبلو': [0.8, 0],
+        'حکمت عملی نہر پختگی': [0, 1],
+        'حکمت عملی تالاب': [0, 1],
+        'حکمت عملی براے آبپاشی کارکردگی': [0, 1]
     }
 
     runs_complex = {}
 
-    for cp in ops['Capacity per tubewell']:
-        for fw in ops['Fw']:
-            for cl in ops['Policy Canal lining']:
-                for rw in ops['Policy RH']:
-                    for ir in ops['Policy Irrigation improvement']:
+    for cp in ops['ایک کنواں کا حجم']:
+        for fw in ops['ایف ڈبلو']:
+            for cl in ops['حکمت عملی نہر پختگی']:
+                for rw in ops['حکمت عملی تالاب']:
+                    for ir in ops['حکمت عملی براے آبپاشی کارکردگی']:
                         run_name = 'TC {}, Fw {}, CL {}, RW {}, II {}'.format(
                             cp, fw, cl, rw, ir
                         )
 
                         runs_complex[run_name] = {
-                            'Capacity per tubewell': cp,
-                            'Fw': fw,
-                            'Policy Canal lining': cl,
-                            'Policy RH': rw,
-                            'Policy Irrigation improvement': ir
+                            'ایک کنواں کا حجم': cp,
+                            'ایف ڈبلو': fw,
+                            'حکمت عملی نہر پختگی': cl,
+                            'حکمت عملی تالاب': rw,
+                            'حکمت عملی براے آبپاشی کارکردگی': ir
                         }
 
     # 3. Now create the model
     # Create a coupled model instance
-    mds = gen_mds(os.path.join(os.path.split(__file__)[0], 'ونشم', 'Tinamit_Rechna.vpm'))
+    mds = gen_mds(os.path.join(os.path.split(__file__)[0], 'ونشم', 'Tinamit_Rechna_urdu.vpm'))
     bf = ModeloSAHYSMOD('495anew1.inp')
     modelo = Conectado(bf, mds)
     nueva_unidad('season', 'month', 6)
 
     # Couple models(Change variable names as needed)
-    modelo.conectar(var_mds='Soil salinity Tinamit CropA', mds_fuente=False, var_bf="CrA - Root zone salinity crop A")
-    modelo.conectar(var_mds='Soil salinity Tinamit CropB', mds_fuente=False, var_bf="CrB - Root zone salinity crop B")
-    modelo.conectar(var_mds='Area fraction Tinamit CropA', mds_fuente=False,
+    modelo.conectar(var_mds='زمین نمکینی ٹینامٹ براے فصل الف', mds_fuente=False, var_bf="CrA - Root zone salinity crop A")
+    modelo.conectar(var_mds='زمین نمکینی ٹینامٹ براے فصل ب', mds_fuente=False, var_bf="CrB - Root zone salinity crop B")
+    modelo.conectar(var_mds='علاقائی حصہ فصل الف ٹینامٹ', mds_fuente=False,
                     var_bf="Area A - Seasonal fraction area crop A")
-    modelo.conectar(var_mds='Area fraction Tinamit CropB', mds_fuente=False,
+    modelo.conectar(var_mds='علاقائی حصہ فصل ب ٹینامٹ', mds_fuente=False,
                     var_bf="Area B - Seasonal fraction area crop B")
-    modelo.conectar(var_mds='Watertable depth Tinamit', mds_fuente=False, var_bf="Dw - Groundwater depth")
-    modelo.conectar(var_mds='ECdw Tinamit', mds_fuente=False, var_bf='Cqf - Aquifer salinity')
-    modelo.conectar(var_mds='Final Rainfall', mds_fuente=True, var_bf='Pp - Rainfall')
-    modelo.conectar(var_mds='Lc', mds_fuente=True, var_bf='Lc - Canal percolation')
-    modelo.conectar(var_mds='Ia CropA', mds_fuente=True, var_bf='IaA - Crop A field irrigation')
-    modelo.conectar(var_mds='Ia CropB', mds_fuente=True, var_bf='IaB - Crop B field irrigation')
-    modelo.conectar(var_mds='Gw', mds_fuente=True, var_bf='Gw - Groundwater extraction')
-    modelo.conectar(var_mds='EpA', mds_fuente=True, var_bf='EpA - Potential ET crop A')
-    modelo.conectar(var_mds='EpB', mds_fuente=True, var_bf='EpB - Potential ET crop B')
-    modelo.conectar(var_mds='Irrigation efficiency', mds_fuente=True, var_bf='FsA - Water storage efficiency crop A')
-    modelo.conectar(var_mds='Fw', mds_fuente=True, var_bf='Fw - Fraction well water to irrigation')
+    modelo.conectar(var_mds='ٹینامیٹ زیر زمین پانی کی سطح', mds_fuente=False, var_bf="Dw - Groundwater depth")
+    modelo.conectar(var_mds='برقی موصل ڈی ڈبلوٹینامٹ', mds_fuente=False, var_bf='Cqf - Aquifer salinity')
+    modelo.conectar(var_mds='حتمی بارش', mds_fuente=True, var_bf='Pp - Rainfall')
+    modelo.conectar(var_mds='ایل سی', mds_fuente=True, var_bf='Lc - Canal percolation')
+    modelo.conectar(var_mds='آبپاشی فصل الف', mds_fuente=True, var_bf='IaA - Crop A field irrigation')
+    modelo.conectar(var_mds='آبپاشی فصل ب', mds_fuente=True, var_bf='IaB - Crop B field irrigation')
+    modelo.conectar(var_mds='جی ڈبلو', mds_fuente=True, var_bf='Gw - Groundwater extraction')
+    modelo.conectar(var_mds='ممکنہ آبی بخارات براۓ فصل الف', mds_fuente=True, var_bf='EpA - Potential ET crop A')
+    modelo.conectar(var_mds='ممکنہ آبی بخارات براۓ فصل ب', mds_fuente=True, var_bf='EpB - Potential ET crop B')
+    modelo.conectar(var_mds='آبپاشی کارکردگی', mds_fuente=True, var_bf='FsA - Water storage efficiency crop A')
+    modelo.conectar(var_mds='ایف ڈبلو', mds_fuente=True, var_bf='Fw - Fraction well water to irrigation')
 
     # 4. Finally, run the model
     if use_simple:
@@ -120,14 +120,14 @@ if __name__ == '__main__':
                                 'Temperatura mínima': 1,
                                 'Temperatura máxima': 1})
 
-        modelo.mds.conectar_var_clima(var='TminTinamit', var_clima='Temperatura mínima', conv=1)
-        modelo.mds.conectar_var_clima(var='TmaxTinamit', var_clima='Temperatura máxima', conv=1)
-        modelo.mds.conectar_var_clima(var='RainfallTinamit', var_clima='Precipitación', conv=0.001)
+        modelo.mds.conectar_var_clima(var='کم سے کم درجہ حرارت ٹینامٹ', var_clima='Temperatura mínima', conv=1)
+        modelo.mds.conectar_var_clima(var='زیادہ سے زیادہ درجہ حرارت ٹینامٹ', var_clima='Temperatura máxima', conv=1)
+        modelo.mds.conectar_var_clima(var='بارش ٹینامٹ', var_clima='Precipitación', conv=0.001)
         modelo.estab_conv_unid_tiempo('mes', unid='season', factor=6)
 
         vals_inic = {x: {'mds': v} for x, v in runs.items()}
-        dibs = [dict(geog=Rechna_Doab, var='Watertable depth Tinamit', directorio='Maps'),
-                dict(geog=Rechna_Doab, var='Soil salinity Tinamit CropA', colores=-1, directorio='Maps')]
+        dibs = [dict(geog=Rechna_Doab, var='ٹینامیٹ زیر زمین پانی کی سطح', directorio='Maps'),
+                dict(geog=Rechna_Doab, var='زمین نمکینی ٹینامٹ براے فصل الف', colores=-1, directorio='Maps')]
 
         modelo.simular_grupo(paso=1, t_final=10 * 2, t_inic='01/11/1989', lugar_clima=location,
                              recalc_clima=False, clima=[0, 2.6, 4.5, 6.0, 8.5], vals_inic=vals_inic, combinar=True,
