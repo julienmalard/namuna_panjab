@@ -5,7 +5,7 @@ from tinamit.envolt.bf.sahysmod import ModeloSAHYSMOD
 from tinamit.envolt.mds import gen_mds
 from tinamit.unids import nueva_unidad
 
-متحرک_نظام = gen_mds(os.path.join(os.path.split(__file__)[0], 'ونشم', 'رچنا دوآب.vpm'))
+متحرک_نظام = gen_mds(os.path.join(os.path.split(__file__)[0], 'ونسم', 'رچنا دوآب.vpm'))
 ماحولیاتی = ModeloSAHYSMOD(os.path.join(os.path.split(__file__)[0], 'ساحسمود/ابتدائی.inp'))
 نمونہ = Conectado(ماحولیاتی, متحرک_نظام)
 
