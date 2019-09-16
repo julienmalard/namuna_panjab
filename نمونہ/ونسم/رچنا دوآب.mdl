@@ -27,12 +27,12 @@ TIME STEP  = 1
 	~		|
 
 کم سے کم درجہ حرارت[Polygon]:INTERPOLATE::=
-	GET XLS DATA( '?test' , 'Tmin', 'b', 'C2' )
+	GET XLS DATA( '?کوائف' , 'Tmin', 'b', 'C2' )
 	~	degree C
 	~		|
 
 زیادہ سے زیادہ درجہ حرارت[Polygon]:INTERPOLATE::=
-	GET XLS DATA( '?test' , 'Tmax', 'b', 'C2' )
+	GET XLS DATA( '?کوائف' , 'Tmax', 'b', 'C2' )
 	~	degree C
 	~		|
 
@@ -252,7 +252,7 @@ Negative behavior test crop2[Polygon,canal,kc2,c2]:THE CONDITION:
 	~		|
 
 زیادہ سے زیادہ پیداوار فصل ب:INTERPOLATE::=
-	GET XLS DATA('?test', 'Crop_Yield' , 'b' , 'H2' )
+	GET XLS DATA('?کوائف', 'Crop_Yield' , 'b' , 'H2' )
 	~	Kg/(m*m)/season
 	~		|
 
@@ -294,7 +294,7 @@ Negative behavior test crop2[Polygon,canal,kc2,c2]:THE CONDITION:
 	|
 
 علاقائی حصہ فصل الف[Polygon]:INTERPOLATE::=
-	GET XLS DATA('?test', 'AF' , 'A' , 'B2' )
+	GET XLS DATA('?کوائف', 'AF' , 'A' , 'B2' )
 	~	Dmnl
 	~	Area fraction is the fraction (0-1) of the polygon covered by a specific \
 		crop. The area fraction is read from an excel file, where C1 (wheat) and \
@@ -401,7 +401,7 @@ Negative behavior test crop3[Polygon,canal,kc3,c3]:THE CONDITION:
 	~		|
 
 بازاری قیمت فصل الف:INTERPOLATE::=
-	GET XLS DATA('?test', 'Market_Rate' , 'h' , 'M2' )
+	GET XLS DATA('?کوائف', 'Market_Rate' , 'h' , 'M2' )
 	~	Rs/Kg
 	~		|
 
@@ -448,7 +448,7 @@ Negative behavior test crop3[Polygon,canal,kc3,c3]:THE CONDITION:
 	~		|
 
 زمین نمکینی براے فصل ب[Polygon]:INTERPOLATE::=
-	GET XLS DATA('?test', 'SS' , 'A' , 'HI2' )
+	GET XLS DATA('?کوائف', 'SS' , 'A' , 'HI3' )
 	~	dS/m
 	~		|
 
@@ -657,7 +657,7 @@ Negative behavior test crop4[Polygon,canal,kc4,c4]:THE CONDITION:
 	|
 
 Tubewell number at zero time[Polygon]=
-	GET XLS CONSTANTS('?test', 'TWN' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'TWN' , 'b2*' )
 	~	Nos
 	~		~	:SUPPLEMENTARY 
 	|
@@ -821,42 +821,42 @@ Check when RWH is zero[Polygon]:THE CONDITION:
 	~		|
 
 AW zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'AWS' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'AWS' , 'b2*' )
 	~	m*m*m
 	~		|
 
 Debt zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'DEB' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'DEB' , 'b2*' )
 	~	Rs
 	~		|
 
 نہر ی کارکردگی ابتدائی وقت پر[Polygon]=
-	GET XLS CONSTANTS('?test', 'IEE' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'IEE' , 'b2*' )
 	~	Dmnl
 	~		|
 
 Water in storage zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'WIS' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'WIS' , 'b2*' )
 	~	m*m*m
 	~		|
 
 silted capacity zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'SC' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'SC' , 'b2*' )
 	~	m*m*m
 	~		|
 
 constructed capacity zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'CC' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'CC' , 'b2*' )
 	~	m*m*m
 	~		|
 
 نہر پختگی ابتدائی وقت پر[canal]=
-	GET XLS CONSTANTS('?test', 'CLS' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'CLS' , 'b2*' )
 	~	m
 	~		|
 
 Farm income zero time stock[Polygon]=
-	GET XLS CONSTANTS('?test', 'FIC' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'FIC' , 'b2*' )
 	~	Rs
 	~		|
 
@@ -904,7 +904,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 بازاری قیمت فصل ب:INTERPOLATE::=
-	GET XLS DATA('?test', 'Market_Rate' , 'h' , 'N2' )
+	GET XLS DATA('?کوائف', 'Market_Rate' , 'h' , 'N2' )
 	~	Rs/Kg
 	~		|
 
@@ -921,7 +921,7 @@ Farm income zero time stock[Polygon]=
 	|
 
 زیادہ سے زیادہ پیداوار فصل الف:INTERPOLATE::=
-	GET XLS DATA('?test', 'Crop_Yield' , 'b' , 'G2' )
+	GET XLS DATA('?کوائف', 'Crop_Yield' , 'b' , 'G2' )
 	~	Kg/(m*m)/season
 	~		|
 
@@ -979,7 +979,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 برقی موصل ڈی ڈبلو[Polygon]:INTERPOLATE::=
-	GET XLS DATA( '?test', 'ECdw' , 'A' , 'B2' )
+	GET XLS DATA( '?کوائف', 'ECdw' , 'A' , 'B2' )
 	~	dS/m
 	~		|
 
@@ -1017,7 +1017,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 زمین نمکینی براے فصل الف[Polygon]:INTERPOLATE::=
-	GET XLS DATA('?test', 'SS' , 'A' , 'B2' )
+	GET XLS DATA('?کوائف', 'SS' , 'A' , 'B3' )
 	~	dS/m
 	~		|
 
@@ -1066,7 +1066,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 حکومتی قرضہ:INTERPOLATE::=
-	GET XLS DATA('?test', 'Loan' , 'e' , 'F2' )
+	GET XLS DATA('?کوائف', 'Loan' , 'e' , 'F2' )
 	~	Rs/season
 	~	for now I am taking it constant but we need to link it with agriculture \
 		input
@@ -1118,7 +1118,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 ڈیزل کی قیمت کا جدول=
-	GET XLS LOOKUPS('?test', 'Diesel_cost' , 'a', 'b2' )
+	GET XLS LOOKUPS('?کوائف', 'Diesel_cost' , 'a', 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1139,7 +1139,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 زیر زمين پانی کی سطح[Polygon]:INTERPOLATE::=
-	GET XLS DATA('?test', 'WTD' , 'A' , 'B2' )
+	GET XLS DATA('?کوائف', 'WTD' , 'A' , 'B2' )
 	~	m
 	~		|
 
@@ -1149,7 +1149,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 سود شرح:INTERPOLATE::=
-	GET XLS DATA('?test', 'Loan' , 'e' , 'G2' )
+	GET XLS DATA('?کوائف', 'Loan' , 'e' , 'G2' )
 	~	fraction/season
 	~		|
 
@@ -1210,7 +1210,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 کارکردگی بہتری جدول[Polygon]=
-	GET XLS LOOKUPS('?test', 'Irreff lookup' , 'a', 'b2' )
+	GET XLS LOOKUPS('?کوائف', 'Irreff lookup' , 'a', 'b3' )
 	~	Dmnl
 	~		|
 
@@ -1226,7 +1226,7 @@ Farm income zero time stock[Polygon]=
 	|
 
 قیمت لگوائی=
-	لگوائی قیمت جز*قیمت لگوائی 2003
+	لگوائی قیمت جز*قیمت لگوائی ۲۰۰۳
 	~	Rs/unit
 	~		|
 
@@ -1282,7 +1282,7 @@ Farm income zero time stock[Polygon]=
 	~	Dmnl
 	~		|
 
-قیمت لگوائی 2003=
+قیمت لگوائی ۲۰۰۳=
 	5900
 	~	Rs/unit
 	~		|
@@ -1305,7 +1305,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 تالاب کی قیمت=
-	تالاب قیمت جز*تالاب قیمت براے سال 2003
+	تالاب قیمت جز*تالاب قیمت براے سال ۲۰۰۳
 	~	Rs/(m*m*m)
 	~		|
 
@@ -1384,7 +1384,7 @@ Farm income zero time stock[Polygon]=
 	~	m*m*m
 	~		|
 
-مرمتی قیمت براۓ سال 2003=
+مرمتی قیمت براۓ سال ۲۰۰۳=
 	590
 	~	Rs/(m*m*m)
 	~		|
@@ -1402,7 +1402,7 @@ Farm income zero time stock[Polygon]=
 	|
 
 مرمتی قیمت=
-	مرمتی قیمت جز*مرمتی قیمت براۓ سال 2003
+	مرمتی قیمت جز*مرمتی قیمت براۓ سال ۲۰۰۳
 	~	Rs/(m*m*m)
 	~		|
 
@@ -1418,7 +1418,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 صلاحیت جدول=
-	GET XLS LOOKUPS('?test', 'Capacity increase' , 'a' , 'b2' )
+	GET XLS LOOKUPS('?کوائف', 'Capacity increase' , 'a' , 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1437,7 +1437,7 @@ Farm income zero time stock[Polygon]=
 	~	m*m*m
 	~		|
 
-تالاب قیمت براے سال 2003=
+تالاب قیمت براے سال ۲۰۰۳=
 	2950
 	~	Rs/(m*m*m)
 	~		|
@@ -1468,7 +1468,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 پختگی کی قیمت=
-	پختگی قیمت جز*پختگی قیمت براۓ سال 2003
+	پختگی قیمت جز*پختگی قیمت براۓ سال ۲۰۰۳
 	~	Rs/m
 	~		|
 
@@ -1478,7 +1478,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 نہر پختگی جدول[canal]=
-	GET XLS LOOKUPS('?test', 'Canalining policy' , 'a', 'b2' )
+	GET XLS LOOKUPS('?کوائف', 'Canalining policy' , 'a', 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1492,7 +1492,7 @@ Farm income zero time stock[Polygon]=
 	~	Dmnl
 	~		|
 
-پختگی قیمت براۓ سال 2003=
+پختگی قیمت براۓ سال ۲۰۰۳=
 	59000
 	~	Rs/m
 	~		|
@@ -1514,7 +1514,7 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 گرافی جدول=
-	GET XLS LOOKUPS('?test', 'Inflation' , 'a', 'b2' )
+	GET XLS LOOKUPS('?کوائف', 'Inflation' , 'a', 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1560,12 +1560,12 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 چوکور جز[Polygon,canal]=
-	GET XLS CONSTANTS( '?test' , 'Active' , 'b2' )
+	GET XLS CONSTANTS( '?کوائف' , 'Active' , 'b2' )
 	~	Dmnl
 	~		|
 
 کل لمبائی[canal]=
-	GET XLS CONSTANTS('?test', 'CL' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'CL' , 'b2*' )
 	~	m
 	~		|
 
@@ -1597,102 +1597,102 @@ Farm income zero time stock[Polygon]=
 	~		|
 
 P HassuDyCa16:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'Q5', 'Q22' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'Q5', 'Q22' , 'N' )
 	~	
 	~		|
 
 T ModiMrCa20:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'U5', 'U7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'U5', 'U7' , 'N' )
 	~	
 	~		|
 
 S JaralaMrCa19:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'T5', 'T9' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'T5', 'T9' , 'N' )
 	~	
 	~		|
 
 M KakiLMrCa13:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'N5', 'N7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'N5', 'N7' , 'N' )
 	~	
 	~		|
 
 O ArroutiMrCa15:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'P5', 'P7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'P5', 'P7' , 'N' )
 	~	
 	~		|
 
 R DarkhanaDyCa18:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'S5', 'S13' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'S5', 'S13' , 'N' )
 	~	
 	~		|
 
 H DauranpurMrCa8:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'I5', 'I10' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'I5', 'I10' , 'N' )
 	~	
 	~		|
 
 J FaridMrCa10:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'K5', 'K11' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'K5', 'K11' , 'N' )
 	~	
 	~		|
 
 N BachrianwalaMrCa14:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'O5', 'O11' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'O5', 'O11' , 'N' )
 	~	
 	~		|
 
 Q BasiraDyCa17:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'R5', 'R9' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'R5', 'R9' , 'N' )
 	~	
 	~		|
 
 L KakiRMrCa12:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'M5', 'M7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'M5', 'M7' , 'N' )
 	~	
 	~		|
 
 I PipliMrCa9:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'J5', 'J10' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'J5', 'J10' , 'N' )
 	~	
 	~		|
 
 U DangraMrCa21:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'V5', 'V7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'V5', 'V7' , 'N' )
 	~	
 	~		|
 
 K RakhBhaMrCa11:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'L5', 'L14' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'L5', 'L14' , 'N' )
 	~	
 	~		|
 
 G KoraMrCa7:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'H5', 'H9' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'H5', 'H9' , 'N' )
 	~	
 	~		|
 
 D RajbanaMinorC4:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'E5', 'E7' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'E5', 'E7' , 'N' )
 	~	
 	~		|
 
 C JalalpurminorC3:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'D5', 'D23' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'D5', 'D23' , 'N' )
 	~	
 	~		|
 
 B MariminorC2:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'C5', 'C23' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'C5', 'C23' , 'N' )
 	~	
 	~		|
 
 A ShorkotdistryC1:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'b5', 'b18' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'b5', 'b18' , 'N' )
 	~	
 	~		|
 
 E LakiMrCa5:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'f5', 'f19' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'f5', 'f19' , 'N' )
 	~	
 	~		|
 
@@ -1717,7 +1717,7 @@ E LakiMrCa5:
 	~		|
 
 F GaghDyCa6:
-	GET XLS SUBSCRIPT( '?test' , 'Canalsvspolygon', 'G5', 'G27' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Canalsvspolygon', 'G5', 'G27' , 'N' )
 	~	
 	~		|
 
@@ -1742,7 +1742,7 @@ F GaghDyCa6:
 	~		|
 
 فعال رساو[Polygon,canal]=
-	GET XLS CONSTANTS( '?test' , 'Seep active' , 'b2' )
+	GET XLS CONSTANTS( '?کوائف' , 'Seep active' , 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1768,7 +1768,7 @@ F GaghDyCa6:
 	~		|
 
 چوکور آر ڈی[Polygon]=
-	GET XLS CONSTANTS('?test', 'RD' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'RD' , 'b2*' )
 	~	m
 	~		|
 
@@ -1778,7 +1778,7 @@ F GaghDyCa6:
 	~		|
 
 نہری تقسیم[canal,position]=
-	GET XLS CONSTANTS( '?test' , 'Position' , 'b2' )
+	GET XLS CONSTANTS( '?کوائف' , 'Position' , 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1798,7 +1798,7 @@ position:
 	~		|
 
 فعال[Polygon,canal]=
-	GET XLS CONSTANTS( '?test' , 'Active' , 'b2' )
+	GET XLS CONSTANTS( '?کوائف' , 'Active' , 'b2' )
 	~	Dmnl
 	~		|
 
@@ -1814,7 +1814,7 @@ position:
 	~		|
 
 موسمی بخارات:=
-	GET XLS DATA( '?test' , 'SEvapo', 'a', 'b2' )
+	GET XLS DATA( '?کوائف' , 'SEvapo', 'a', 'b2' )
 	~	m/season
 	~		|
 
@@ -1846,7 +1846,7 @@ Kccrop:
 	~		|
 
 علاقائی حصہ فصل ب[Polygon]:INTERPOLATE::=
-	GET XLS DATA('?test', 'AF' , 'A' , 'HI2' )
+	GET XLS DATA('?کوائف', 'AF' , 'A' , 'HI2' )
 	~	Dmnl
 	~	Area fraction is the fraction (0-1) of the polygon covered by a specific \
 		crop. The area fraction is read from an excel file, where C1 (wheat) and \
@@ -1855,7 +1855,7 @@ Kccrop:
 	|
 
 canal:
-	GET XLS SUBSCRIPT( '?test' , 'Subscript', 'b1', 'b21' , 'Ca' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Subscript', 'b1', 'b21' , 'Ca' )
 	~	
 	~		|
 
@@ -1869,12 +1869,12 @@ canal:
 	|
 
 سر پر نہر کی فراہمی[canal]:INTERPOLATE::=
-	GET XLS DATA('?test', 'Canals supply' , 'b' , 'c4' )
+	GET XLS DATA('?کوائف', 'Canals supply' , 'b' , 'c4' )
 	~	m*m*m/season
 	~		|
 
 نہر کی لمبائی[canal]=
-	GET XLS CONSTANTS('?test', 'CL' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'CL' , 'b2*' )
 	~	m
 	~		|
 
@@ -1916,17 +1916,17 @@ crops:
 	|
 
 Polygon:
-	GET XLS SUBSCRIPT( '?test' , 'Subscript', 'a1', 'a215' , 'N' )
+	GET XLS SUBSCRIPT( '?کوائف' , 'Subscript', 'a1', 'a215' , 'N' )
 	~	
 	~		|
 
 بارش[Polygon]:INTERPOLATE::=
-	GET XLS DATA( '?test' , 'Rainfall', 'b', 'C2' )
+	GET XLS DATA( '?کوائف' , 'Rainfall', 'b', 'C2' )
 	~	m/season
 	~		|
 
 آر ڈی[Polygon]=
-	GET XLS CONSTANTS('?test', 'RD' , 'b2*' )
+	GET XLS CONSTANTS('?کوائف', 'RD' , 'b2*' )
 	~	m
 	~		|
 
@@ -2162,7 +2162,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 10,193,پختگی کی قیمت,-1912,1493,43,11,8,3,0,0,0,0,0,0
 10,194,سرمایہ کاری,-1673,1674,37,11,8,3,0,0,0,0,0,0
 1,195,193,191,1,0,0,0,0,64,0,-1--1--1,,1|(-1916,1540)|
-10,196,پختگی قیمت براۓ سال 2003,-1791,1432,50,19,8,3,0,0,0,0,0,0
+10,196,پختگی قیمت براۓ سال ۲۰۰۳,-1791,1432,50,19,8,3,0,0,0,0,0,0
 1,197,196,193,1,0,0,0,0,64,0,-1--1--1,,1|(-1847,1459)|
 1,198,191,194,1,0,0,0,0,64,0,-1--1--1,,1|(-1829,1648)|
 10,199,حکومتی حصہ,-1625,1719,39,11,8,3,0,0,0,0,0,0
@@ -2238,7 +2238,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 1,269,264,239,0,0,0,0,0,64,0,-1--1--1,,1|(-2137,2306)|
 10,270,ریت جمع ہونے کی شرح,-2511,2291,53,19,8,3,0,0,0,0,0,0
 1,271,270,226,1,0,0,0,0,64,0,-1--1--1,,1|(-2595,2251)|
-10,272,مرمتی قیمت براۓ سال 2003,-2927,2022,50,19,8,3,0,0,0,0,0,0
+10,272,مرمتی قیمت براۓ سال ۲۰۰۳,-2927,2022,50,19,8,3,0,0,0,0,0,0
 10,273,دھیان ریت بہاو جدول,-2705,2033,58,11,8,3,0,0,0,0,0,0
 1,274,273,246,1,0,0,0,0,64,0,-1--1--1,,1|(-2701,2061)|
 10,275,اصل پانی بچاو قیمت,-1898,2202,55,11,8,3,0,0,0,0,0,0
@@ -2258,7 +2258,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 10,289,صلاحیت جدول,-2249,1981,42,11,8,3,0,0,0,0,0,0
 1,290,289,285,1,0,0,0,0,64,0,-1--1--1,,1|(-2334,1976)|
 1,291,239,285,1,0,0,0,0,64,0,-1--1--1,,1|(-2418,2254)|
-10,292,تالاب قیمت براے سال 2003,-1834,2034,47,19,8,3,0,0,0,0,0,0
+10,292,تالاب قیمت براے سال ۲۰۰۳,-1834,2034,47,19,8,3,0,0,0,0,0,0
 10,293,گرافی جدول,-1852,1955,42,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
 10,294,تالاب قیمت جز,-1953,2003,41,11,8,3,0,0,0,0,0,0
 1,295,287,294,1,0,0,0,0,64,0,-1--1--1,,1|(-2237,1924)|
@@ -2319,7 +2319,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 1,350,349,346,0,0,0,0,0,64,0,-1--1--1,,1|(-3068,2920)|
 10,351,کارکردگی بہتری جدول,-2870,2716,46,19,8,3,0,0,0,0,0,0
 1,352,351,329,1,0,0,0,0,64,0,-1--1--1,,1|(-2855,2762)|
-10,353,قیمت لگوائی 2003,-2109,2778,52,11,8,3,0,0,0,0,0,0
+10,353,قیمت لگوائی ۲۰۰۳,-2109,2778,52,11,8,3,0,0,0,0,0,0
 1,354,353,334,1,0,0,0,0,64,0,-1--1--1,,1|(-2180,2796)|
 10,355,جدول آبپاشی کارکردگی دھیان,-2443,3165,45,19,8,3,0,0,0,0,0,0
 1,356,355,342,0,0,0,0,0,64,0,-1--1--1,,1|(-2461,3132)|
@@ -3387,7 +3387,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 1,48,43,18,0,0,0,0,0,64,0,-1--1--1,,1|(1111,428)|
 10,49,ریت جمع ہونے کی شرح,754,379,56,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 1,50,49,5,1,0,0,0,0,64,0,-1--1--1,,1|(662,351)|
-10,51,مرمتی قیمت براۓ سال 2003,326,131,58,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
+10,51,مرمتی قیمت براۓ سال ۲۰۰۳,326,131,58,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 10,52,دھیان ریت بہاو جدول,524,95,68,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 1,53,52,25,1,0,0,0,0,64,0,-1--1--1,,1|(528,126)|
 10,54,اصل پانی بچاو قیمت,1355,311,49,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
@@ -3407,7 +3407,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 10,68,صلاحیت جدول,1004,90,38,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 1,69,68,64,1,0,0,0,0,64,0,-1--1--1,,1|(919,85)|
 1,70,18,64,1,0,0,0,0,64,0,-1--1--1,,1|(815,380)|
-10,71,تالاب قیمت براے سال 2003,1419,143,57,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
+10,71,تالاب قیمت براے سال ۲۰۰۳,1419,143,57,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 10,72,گرافی جدول,1401,64,37,20,8,2,0,11,-1,0,0,0,128-128-128,0-0-0,|14||128-128-128
 10,73,تالاب قیمت جز,1300,112,39,20,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|14||0-0-0
 1,74,66,73,1,0,0,0,0,64,0,-1--1--1,,1|(1016,33)|
@@ -3702,7 +3702,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 10,67,پختگی کی قیمت,941,31,40,11,8,3,0,0,0,0,0,0
 10,68,سرمایہ کاری,1180,212,35,11,8,3,0,0,0,0,0,0
 1,69,67,65,1,0,0,0,0,64,0,-1--1--1,,1|(937,78)|
-10,70,پختگی قیمت براۓ سال 2003,1062,-30,50,19,8,3,0,0,0,0,0,0
+10,70,پختگی قیمت براۓ سال ۲۰۰۳,1062,-30,50,19,8,3,0,0,0,0,0,0
 1,71,70,67,1,0,0,0,0,64,0,-1--1--1,,1|(1006,-3)|
 1,72,65,68,1,0,0,0,0,64,0,-1--1--1,,1|(1024,186)|
 10,73,حکومتی حصہ,1228,257,37,11,8,3,0,0,0,0,0,0
@@ -3942,7 +3942,7 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,8
 1,37,36,33,0,0,0,0,0,64,0,-1--1--1,,1|(399,305)|
 10,38,کارکردگی بہتری جدول,397,155,66,19,8,3,0,0,0,0,0,0
 1,39,38,16,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(442,186)|
-10,40,قیمت لگوائی 2003,1151,189,49,19,8,3,0,0,0,0,0,0
+10,40,قیمت لگوائی ۲۰۰۳,1151,189,49,19,8,3,0,0,0,0,0,0
 1,41,40,21,1,0,0,0,0,64,0,-1--1--1,,1|(1080,207)|
 10,42,جدول آبپاشی کارکردگی دھیان,817,576,60,19,8,3,0,0,0,0,0,0
 1,43,42,29,0,0,0,0,0,64,0,-1--1--1,,1|(797,543)|
@@ -4085,10 +4085,10 @@ $192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,7
 22:Week,Weeks
 22:Year,Years
 22:Day,Days
-30:?test=test.xlsx
-30:?test.xlsx=test.xlsx
-30:?test.xlsx - Excel=test.xlsx
-30:?test.xls=test.xls
+30:?کوائف=کوائف.xlsx
+30:?کوائف.xlsx=کوائف.xlsx
+30:?کوائف.xlsx - Excel=کوائف.xlsx
+30:?کوائف.xls=کوائف.xls
 11:canal distribution and seepage model_1.voc
 12:new.vpd
 18:canal distribution and seepage model_1.vsc
