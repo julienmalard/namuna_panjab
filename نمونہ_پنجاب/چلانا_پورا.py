@@ -4,7 +4,7 @@ from tinamit.mod.corrida import OpsSimulGrupoCombin
 from tinamit.tiempo import EspecTiempo
 from تقدیر.ذرائع import سی_اس_وی
 
-from نمونہ.نمونہ import نمونہ
+from نمونہ_پنجاب.نمونہ import نمونہ
 from . import نکشہ
 from .حکمت_عملی import حکمت_عملی
 
